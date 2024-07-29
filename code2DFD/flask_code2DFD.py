@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 
-import code2DFD
+import code2DFD.code2DFD as code2DFD
 
 app = Flask(__name__, instance_relative_config = True)
 
