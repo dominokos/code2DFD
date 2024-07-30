@@ -16,7 +16,7 @@ def filter_tagged_values(stereotypes):
                 tagged_values[key_value[0]] = int(key_value[1])
             else:
                 tagged_values[key_value[0]] = key_value[1]
-        stereotypes.drop(index)
+        stereotypes.pop(index)
     return tagged_values
 
 def make_codeable_model(model):
