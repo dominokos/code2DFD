@@ -60,7 +60,7 @@ def make_codeable_model(model):
         last_node = name
 
 
-    for edge in model.edges:
+    for edge in model.edges.edges:
         tagged_values = filter_tagged_values(edge.stereotypes)
         stereotypes = remove_traceability(edge.stereotypes)
         
