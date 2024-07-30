@@ -13,6 +13,7 @@ import code2DFD.core.file_interaction as fi
 import code2DFD.output_generators.logger as logger
 import code2DFD.tmp.tmp as tmp
 import code2DFD.output_generators.codeable_model as codeable_model
+import code2DFD.output_generators.codeable_models_to_plantuml as png_gen
 
 
 def api_invocation(path: str) -> str:
@@ -63,6 +64,9 @@ def api_invocation(path: str) -> str:
 
 def graph_to_codeable_model(model) -> tuple[str, str]:
     return codeable_model.make_codeable_model(model)
+
+def codeable_model_to_png(codeable_models_path) -> tuple[str, str]:
+    return png_gen.convert(codeable_models_path)
 
 def main():
     now = datetime.now()
