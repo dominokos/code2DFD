@@ -62,7 +62,7 @@ def api_invocation(path: str) -> str:
 
 
 def graph_to_codeable_model(model) -> tuple[str, str]:
-    return codeable_model.output_codeable_model(model)
+    return codeable_model.make_codeable_model(model)
 
 def main():
     now = datetime.now()
