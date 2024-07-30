@@ -19,7 +19,7 @@ def filter_tagged_values(stereotypes):
         stereotypes.drop(index)
     return tagged_values
 
-def output_codeable_model(model):
+def make_codeable_model(model):
     """Entry function to creation of codeable models. Calls all necessary helper functions and outputs the codeable model"""
     model_name = model.name
 
