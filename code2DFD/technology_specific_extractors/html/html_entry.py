@@ -1,9 +1,9 @@
 import ast
 
-import core.file_interaction as fi
-import core.technology_switch as tech_sw
-import output_generators.traceability as traceability
-import tmp.tmp as tmp
+import code2DFD.core.file_interaction as fi
+import code2DFD.core.technology_switch as tech_sw
+import code2DFD.output_generators.traceability as traceability
+import code2DFD.tmp.tmp as tmp
 
 
 def set_information_flows(dfd):

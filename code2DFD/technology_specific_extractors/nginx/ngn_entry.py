@@ -1,10 +1,10 @@
 import ruamel.yaml
 
-import core.external_components as ext
-import core.file_interaction as fi
-import core.technology_switch as tech_sw
-import tmp.tmp as tmp
-import output_generators.traceability as traceability
+import code2DFD.core.external_components as ext
+import code2DFD.core.file_interaction as fi
+import code2DFD.core.technology_switch as tech_sw
+import code2DFD.tmp.tmp as tmp
+import code2DFD.output_generators.traceability as traceability
 
 
 # The following is taken from ruamel.yaml's authro as a workaround for getting line count for str objects

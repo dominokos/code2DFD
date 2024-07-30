@@ -2,14 +2,14 @@ import ast
 import os
 import re
 
-import core.file_interaction as fi
-import output_generators.logger as logger
-import core.parse_files as parse
-import core.technology_switch as tech_sw
-import technology_specific_extractors.docker.dcr_entry as dcr
-import tmp.tmp as tmp
-import output_generators.traceability as traceability
-from core.service import CService
+import code2DFD.core.file_interaction as fi
+import code2DFD.output_generators.logger as logger
+import code2DFD.core.parse_files as parse
+import code2DFD.core.technology_switch as tech_sw
+import code2DFD.technology_specific_extractors.docker.dcr_entry as dcr
+import code2DFD.tmp.tmp as tmp
+import code2DFD.output_generators.traceability as traceability
+from code2DFD.core.service import CService
 
 
 def set_microservices(dfd) -> dict:

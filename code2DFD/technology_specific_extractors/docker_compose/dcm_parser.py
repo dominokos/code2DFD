@@ -3,9 +3,9 @@ import re
 
 import ruamel.yaml
 
-import output_generators.traceability as traceability
-import technology_specific_extractors.environment_variables as env
-import tmp.tmp as tmp
+import code2DFD.output_generators.traceability as traceability
+import code2DFD.technology_specific_extractors.environment_variables as env
+import code2DFD.tmp.tmp as tmp
 
 
 # The following is taken from ruamel.yaml's authro as a workaround for getting line count for str objects

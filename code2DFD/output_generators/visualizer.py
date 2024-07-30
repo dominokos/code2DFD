@@ -3,7 +3,7 @@
 
 import plantuml
 
-import output_generators.codeable_models_to_plantuml as codeable_models_to_plantuml
+import code2DFD.output_generators.codeable_models_to_plantuml as codeable_models_to_plantuml
 
 
 def output_png(codeable_models_path: str, repo_path: str):

@@ -6,9 +6,9 @@ from configparser import ConfigParser
 
 import requests
 
-import output_generators.logger as logger
-import core.technology_switch as tech_sw
-import tmp.tmp as tmp
+import code2DFD.output_generators.logger as logger
+import code2DFD.core.technology_switch as tech_sw
+import code2DFD.tmp.tmp as tmp
 
 
 ini_config = ConfigParser()

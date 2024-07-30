@@ -1,7 +1,7 @@
 import os
 
-import core.file_interaction as fi
-import tmp.tmp as tmp
+import code2DFD.core.file_interaction as fi
+import code2DFD.tmp.tmp as tmp
 
 
 def detect_port(path: str) -> int:

@@ -1,6 +1,6 @@
 import json
 
-import tmp.tmp as tmp
+import code2DFD.tmp.tmp as tmp
 
 
 

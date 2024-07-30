@@ -1,5 +1,5 @@
-import core.file_interaction as fi
-import core.technology_switch as tech_sw
+import code2DFD.core.file_interaction as fi
+import code2DFD.core.technology_switch as tech_sw
 
 
 def detect_circuit_breakers(microservices: dict, information_flows: dict, dfd) -> dict:

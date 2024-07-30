@@ -3,11 +3,11 @@ import ast
 import requests
 import yaml
 
-import core.file_interaction as fi
-import output_generators.logger as logger
-import core.technology_switch as tech_sw
-import tmp.tmp as tmp
-import output_generators.traceability as traceability
+import code2DFD.core.file_interaction as fi
+import code2DFD.output_generators.logger as logger
+import code2DFD.core.technology_switch as tech_sw
+import code2DFD.tmp.tmp as tmp
+import code2DFD.output_generators.traceability as traceability
 
 
 def set_information_flows(dfd) -> dict:

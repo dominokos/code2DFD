@@ -1,4 +1,4 @@
-import output_generators.traceability as traceability
+import code2DFD.output_generators.traceability as traceability
 
 def classify_internal_infrastructural(microservices: dict) -> dict:
     """Classifies processes as either internal or infrastructural.

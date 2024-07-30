@@ -1,6 +1,6 @@
 
-import output_generators.traceability as traceability
-import technology_specific_extractors.environment_variables as env
+import code2DFD.output_generators.traceability as traceability
+import code2DFD.technology_specific_extractors.environment_variables as env
 
 
 def set_plaintext_credentials(microservices: dict) -> dict:

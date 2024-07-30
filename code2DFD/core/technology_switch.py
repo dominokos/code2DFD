@@ -1,17 +1,17 @@
 import ast
 
-import output_generators.logger as logger
-import technology_specific_extractors.database_connections.dbc_entry as dbc
-import technology_specific_extractors.docker_compose.dcm_entry as dcm
-import technology_specific_extractors.feign_client.fgn_entry as fgn
-import technology_specific_extractors.gradle.grd_entry as grd
-import technology_specific_extractors.html.html_entry as html
-import technology_specific_extractors.implicit_connections.imp_entry as imp
-import technology_specific_extractors.kafka.kfk_entry as kfk
-import technology_specific_extractors.maven.mvn_entry as mvn
-import technology_specific_extractors.rabbitmq.rmq_entry as rmq
-import technology_specific_extractors.resttemplate.rst_entry as rst
-import tmp.tmp as tmp
+import code2DFD.output_generators.logger as logger
+import code2DFD.technology_specific_extractors.database_connections.dbc_entry as dbc
+import code2DFD.technology_specific_extractors.docker_compose.dcm_entry as dcm
+import code2DFD.technology_specific_extractors.feign_client.fgn_entry as fgn
+import code2DFD.technology_specific_extractors.gradle.grd_entry as grd
+import code2DFD.technology_specific_extractors.html.html_entry as html
+import code2DFD.technology_specific_extractors.implicit_connections.imp_entry as imp
+import code2DFD.technology_specific_extractors.kafka.kfk_entry as kfk
+import code2DFD.technology_specific_extractors.maven.mvn_entry as mvn
+import code2DFD.technology_specific_extractors.rabbitmq.rmq_entry as rmq
+import code2DFD.technology_specific_extractors.resttemplate.rst_entry as rst
+import code2DFD.tmp.tmp as tmp
 
 
 def get_microservices(dfd) -> dict:

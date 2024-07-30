@@ -1,4 +1,4 @@
-import output_generators.traceability as traceability
+import code2DFD.output_generators.traceability as traceability
 
 
 def detect_logstash(microservices: dict, information_flows: dict, external_components: dict, dfd) -> dict:

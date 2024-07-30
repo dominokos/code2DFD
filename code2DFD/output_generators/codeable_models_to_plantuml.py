@@ -3,7 +3,7 @@ import tmp.tmp as tmp
 
 plantuml_new = str()
 
-def convert(codeable_models_path: str) -> str:
+def convert(codeable_models_path: str) -> tuple[str, str]:
     """Creates (good looking) PlantUML file out of CodeableModels file.
     """
 

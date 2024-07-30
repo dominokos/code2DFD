@@ -1,9 +1,133 @@
 import tmp.tmp as tmp
+import re
 
 plantuml_path = "plantuml.jar"
 output_directory = "output/codeable_models"
 
 # the used metamodel is microservice_dfds_metamodel.py
+
+def filter_tagged_values(stereotypes):
+    tagged_values = dict()
+    for index, (stereotype, traceability) in enumerate(stereotypes):
+        match = re.search(r"\w+ = \w*", stereotype)
+        if match:
+            key_value = stereotype.split(" = ")
+            if key_value[0] == "Port":
+                tagged_values[key_value[0]] = int(key_value[1])
+            else:
+                tagged_values[key_value[0]] = key_value[1]
+        stereotypes.drop(index)
+    return tagged_values
+
+def output_codeable_model(model):
+    """Entry function to creation of codeable models. Calls all necessary helper functions and outputs the codeable model"""
+    model_name = model.name
+
+    file_content = header()
+    file_content += "\"" + str(model_name) + "\""
+
+    # CodeableModels needs the name of one of the nodes for its final invocation, is written into this var
+    last_node = str()
+    
+    for node in model.nodes.get_nodes():
+        tagged_values = filter_tagged_values(node.stereotypes)
+
+        # Stereotypes
+        stereotypes = node.stereotypes
+    #     if "stereotype_instances" in microservices[m]:
+    #         for s in microservices[m]["stereotype_instances"]:
+    #             stereotypes.add(s)
+
+    #         if stereotypes:
+    #             stereotypes = str(list(stereotypes))
+    #             stereotypes = stereotypes.replace("'", "")
+
+    #     name = str(microservices[m]["servicename"]).replace("-", "_")
+
+    #     # Create entry
+    #     if stereotypes and tagged_values:
+    #         new_line = "\n" + name + " = CClass(service, \"" + str(microservices[m]["servicename"]) + "\", stereotype_instances = " + str(stereotypes) + ", tagged_values = " + str(tagged_values) + ")"
+    #     elif stereotypes:
+    #         new_line = "\n" + name + " = CClass(service, \"" + str(microservices[m]["servicename"]) + "\", stereotype_instances = " + str(stereotypes) + ")"
+    #     else:
+    #         new_line = "\n" + name + " = CClass(service, \"" + str(microservices[m]["servicename"]) + "\")"
+
+    #     file_content += new_line
+    #     last_node = name
+
+
+    # # External Components
+    # for e in external_components.keys():
+    #     # Tagged Values
+    #     tagged_values = dict()
+    #     if "tagged_values" in external_components[e]:
+    #         for t in external_components[e]["tagged_values"]:
+    #             if t[0] == "Port":
+    #                 tagged_values[t[0]] = int(t[1])
+    #             else:
+    #                 tagged_values[t[0]] = t[1]
+
+    #     # Stereotypes
+    #     stereotypes = set()
+    #     if "stereotype_instances" in external_components[e]:
+    #         for s in external_components[e]["stereotype_instances"]:
+    #             stereotypes.add(s)
+    #         if stereotypes:
+    #             stereotypes = str(list(stereotypes))
+    #             stereotypes = stereotypes.replace("'", "")
+
+    #     name = str(external_components[e]["name"]).replace("-", "_")
+
+
+    #     if stereotypes and tagged_values:
+    #         new_line = "\n" + name + " = CClass(external_component, \"" + str(external_components[e]["name"]) + "\", stereotype_instances = " + str(stereotypes) + ", tagged_values = " + str(tagged_values) + ")"
+    #     elif stereotypes:
+    #         new_line = "\n" + name + " = CClass(external_component, \"" + str(external_components[e]["name"]) + "\", stereotype_instances = " + str(stereotypes) + ")"
+    #     else:
+    #         new_line = "\n" + name + " = CClass(external_component, \"" + str(external_components[e]["name"]) + "\)"
+    #     file_content += new_line
+
+
+    # # Information Flows
+    # for i in information_flows.keys():
+    #     # Tagged Values
+    #     tagged_values = dict()
+    #     if "tagged_values" in information_flows[i]:
+    #         for t in information_flows[i]["tagged_values"]:
+    #             if t[0] == "Port":
+    #                 t[1] = int(t[1])
+    #             tagged_values[t[0]] = t[1]
+
+    #     # Stereotypes
+    #     stereotypes = set()
+    #     if "stereotype_instances" in information_flows[i]:
+    #         if type(information_flows[i]["stereotype_instances"]) == set or type(information_flows[i]["stereotype_instances"]) == list:
+    #             for s in information_flows[i]["stereotype_instances"]:
+    #                 stereotypes.add(s)
+    #         else:
+    #             stereotypes.add(information_flows[i]["stereotype_instances"])
+    #         if stereotypes:
+    #             stereotypes = str(list(stereotypes))
+    #             stereotypes = stereotypes.replace("'", "")
+
+    #     sender = str(information_flows[i]["sender"]).replace("-", "_")
+    #     receiver = str(information_flows[i]["receiver"]).replace("-", "_")
+
+    #     if stereotypes and tagged_values:
+    #         new_line = "\nadd_links({" + sender + ": " + receiver + "}, stereotype_instances = " + str(stereotypes) + ", tagged_values = " + str(tagged_values) + ")"
+    #     elif stereotypes:
+    #         new_line = "\nadd_links({" + sender + ": " + receiver + "}, stereotype_instances = " + str(stereotypes) + ")"
+    #     else:
+    #         new_line = "\nadd_links({" + sender + ": " + receiver + "})"
+    #     file_content += new_line
+
+
+    # file_content += footer(last_node)
+
+    # output_path = str()
+    # output_path = create_file(model_name, file_content)
+    # return file_content, output_path
+
 
 def output_codeable_model(microservices, information_flows, external_components):
     """Entry function to creation of codeable models. Calls all necessary helper functions and outputs the codeable model"""

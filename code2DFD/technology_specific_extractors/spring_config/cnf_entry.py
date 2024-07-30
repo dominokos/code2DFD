@@ -1,9 +1,9 @@
-import core.file_interaction as fi
-import core.parse_files as parse
-import technology_specific_extractors.environment_variables as env
-import core.technology_switch as tech_sw
-import tmp.tmp as tmp
-import output_generators.traceability as traceability
+import code2DFD.core.file_interaction as fi
+import code2DFD.core.parse_files as parse
+import code2DFD.technology_specific_extractors.environment_variables as env
+import code2DFD.core.technology_switch as tech_sw
+import code2DFD.tmp.tmp as tmp
+import code2DFD.output_generators.traceability as traceability
 
 
 def detect_spring_config(microservices: dict, information_flows: dict, external_components: dict, dfd) -> dict:

@@ -1,9 +1,9 @@
 import ast
 
-import technology_specific_extractors.environment_variables as env
-import core.technology_switch as tech_sw
-import tmp.tmp as tmp
-import output_generators.traceability as traceability
+import code2DFD.technology_specific_extractors.environment_variables as env
+import code2DFD.core.technology_switch as tech_sw
+import code2DFD.tmp.tmp as tmp
+import code2DFD.output_generators.traceability as traceability
 
 
 def set_information_flows(dfd) -> set:

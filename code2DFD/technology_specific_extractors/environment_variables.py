@@ -1,4 +1,4 @@
-import core.file_interaction as fi
+import code2DFD.core.file_interaction as fi
 
 env_vars = dict()
 

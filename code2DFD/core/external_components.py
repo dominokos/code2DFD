@@ -1,4 +1,4 @@
-import output_generators.traceability as traceability
+import code2DFD.output_generators.traceability as traceability
 
 
 def add_user(external_components: dict) -> dict:

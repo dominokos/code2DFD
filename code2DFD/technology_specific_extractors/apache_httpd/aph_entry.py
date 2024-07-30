@@ -1,9 +1,9 @@
 import re
 
-import core.external_components as ext
-import core.file_interaction as fi
-import core.technology_switch as tech_sw
-import output_generators.traceability as traceability
+import code2DFD.core.external_components as ext
+import code2DFD.core.file_interaction as fi
+import code2DFD.core.technology_switch as tech_sw
+import code2DFD.output_generators.traceability as traceability
 
 
 def detect_apachehttpd_webserver(microservices: dict, information_flows: dict, external_components: dict, dfd) -> dict:

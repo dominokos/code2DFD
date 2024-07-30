@@ -1,6 +1,6 @@
-from core.service import CService
-from core.external_entity import CExternalEntity
-from core.information_flow import CInformationFlow
+from code2DFD.core.service import CService
+from code2DFD.core.external_entity import CExternalEntity
+from code2DFD.core.information_flow import CInformationFlow
 
 
 class CDFD:

@@ -3,8 +3,8 @@ import re
 import requests
 import ruamel.yaml
 
-import core.file_interaction as fi
-import tmp.tmp as tmp
+import code2DFD.core.file_interaction as fi
+import code2DFD.tmp.tmp as tmp
 
 
 # The following is taken from ruamel.yaml's authro as a workaround for getting line count for str objects

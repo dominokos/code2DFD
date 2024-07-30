@@ -8,10 +8,11 @@ import os
 from configparser import ConfigParser
 from datetime import datetime
 
-import core.dfd_extraction as dfd_extraction
-import core.file_interaction as fi
-import output_generators.logger as logger
-import tmp.tmp as tmp
+import code2DFD.core.dfd_extraction as dfd_extraction
+import code2DFD.core.file_interaction as fi
+import code2DFD.output_generators.logger as logger
+import code2DFD.tmp.tmp as tmp
+import code2DFD.output_generators.codeable_model as codeable_model
 
 
 def api_invocation(path: str) -> str:
@@ -59,6 +60,9 @@ def api_invocation(path: str) -> str:
     # Return result
     return response
 
+
+def graph_to_codeable_model(model) -> tuple[str, str]:
+    return codeable_model.output_codeable_model(model)
 
 def main():
     now = datetime.now()

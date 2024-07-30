@@ -1,5 +1,5 @@
-import core.file_interaction as fi
-import output_generators.traceability as traceability
+import code2DFD.core.file_interaction as fi
+import code2DFD.output_generators.traceability as traceability
 
 def detect_databases(microservices: dict) -> dict:
     """Detects databases.
