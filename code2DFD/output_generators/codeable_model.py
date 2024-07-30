@@ -21,8 +21,8 @@ def filter_tagged_values(stereotypes):
 
 def remove_traceability(stereotypes):
     output = list()
-    for index, (stereotype, traceability) in enumerate(stereotypes):
-        output[index] = stereotype
+    for (stereotype, traceability) in stereotypes:
+        output.append(stereotype)
     return output
 
 def make_codeable_model(model):
